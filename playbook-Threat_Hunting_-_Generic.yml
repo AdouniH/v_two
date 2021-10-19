@@ -1,7 +1,7 @@
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.5.0
-    itemVersion: 2.0.2
+    itemVersion: 2.0.6
     packID: CommonPlaybooks
     packPropagationLabels:
     - all
