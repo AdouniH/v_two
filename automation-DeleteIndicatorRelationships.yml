@@ -12,13 +12,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 6.2.0
-    itemVersion: 1.13.25
+    itemVersion: 1.13.39
     packID: Base
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.9.4.19537
+dockerimage: demisto/python3:3.9.7.24076
 engineinfo: {}
 name: DeleteIndicatorRelationships
 pswd: ""
