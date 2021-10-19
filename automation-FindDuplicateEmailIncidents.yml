@@ -83,7 +83,7 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 2.4.1
+    itemVersion: 2.4.4
     packID: Phishing
     packPropagationLabels:
     - all
