@@ -11,13 +11,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.5.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.9.5.20958
+dockerimage: demisto/python3:3.9.7.24076
 enabled: true
 engineinfo: {}
 name: ExtractEmailV2
@@ -43,7 +43,7 @@ script: |2
 
   The pattern will be: <First Group>@<Second Group>.<Third Group>
   """
-  VALID_ADDRESS_FORMAT = r"[a-z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-z0-9.-]+\.[a-z]{2,}"
+  VALID_ADDRESS_FORMAT = r"[a-z0-9.!#$%&'*+-/=?^_`{|}~]+(\[@\]|@)[a-z0-9.-]+\.[a-z]{2,}"
   VALID_ADDRESS_REGEX = VALID_EXTENSION + VALID_ADDRESS_FORMAT
 
 
@@ -57,7 +57,7 @@ script: |2
   def main():
       emails = argToList(demisto.args().get('input'))
 
-      list_results = [email_address for email_address in emails if verify_is_email(email_address)]
+      list_results = [email_address.replace("[@]", "@") for email_address in emails if verify_is_email(email_address)]
 
       if list_results:
           return_results(list_results)
