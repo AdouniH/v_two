@@ -9,13 +9,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 6.0.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.9.5.20070
+dockerimage: demisto/python3:3.9.7.24076
 enabled: true
 engineinfo: {}
 name: GetIndicatorDBotScoreFromCache
@@ -36,9 +36,9 @@ script: |2
           data = res[0]["Contents"][0]
           score = data["score"]
           vendor = "XSOAR"
-          reliability = data["aggregatedReliability"]
+          reliability = data.get("aggregatedReliability")
           indicatorType = data["indicator_type"]
-          expirationStatus = False if data["expirationStatus"] == "active" else True
+          expirationStatus = False if data.get("expirationStatus") == "active" else True
 
           dbotscore = {
               "Indicator": value,
