@@ -25,13 +25,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/unzip:1.0.0.12410
+dockerimage: demisto/unzip:1.0.0.23423
 enabled: true
 engineinfo: {}
 name: UnzipFile
@@ -166,7 +166,7 @@ script: |2
       :param password: password if the zip file is encrypted
       """
       if password:
-          cmd = 'unrar x -p {} {} {}'.format(password, file_path, dir_path)
+          cmd = 'unrar x -p{} {} {}'.format(password, file_path, dir_path)
       else:
           cmd = 'unrar x -p- {} {}'.format(file_path, dir_path)
       process = Popen(shlex.split(cmd), stdout=PIPE, stderr=PIPE)
