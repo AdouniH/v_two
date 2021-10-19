@@ -1,7 +1,7 @@
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 6.0.0
-    itemVersion: 2.4.1
+    itemVersion: 2.4.4
     packID: Phishing
     packPropagationLabels:
     - all
@@ -419,7 +419,7 @@ tasks:
       subject:
         simple: 'Re: Phishing Investigation - ${incident.name}'
       to:
-        simple: $ReporterAddress}
+        simple: ${ReporterAddress}
     separatecontext: false
     skipunavailable: false
     task:
