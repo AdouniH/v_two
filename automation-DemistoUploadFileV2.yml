@@ -17,7 +17,7 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 1.1.5
+    itemVersion: 1.1.7
     packID: DemistoRESTAPI
     packPropagationLabels:
     - all
@@ -26,7 +26,7 @@ contentitemexportablefields:
 dependson:
   must:
   - demisto-api-multipart
-dockerimage: demisto/python3:3.9.5.21272
+dockerimage: demisto/python3:3.9.7.24076
 enabled: true
 engineinfo: {}
 name: DemistoUploadFileV2
