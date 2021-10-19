@@ -1,0 +1,43 @@
+{
+	"brands": null,
+	"defaultIncidentType": "",
+	"description": "",
+	"feed": false,
+	"fromServerVersion": "",
+	"id": "200c76ce-b8a8-43ea-8533-6f5bccac045c",
+	"incidentSamples": null,
+	"indicatorSamples": null,
+	"instanceIds": null,
+	"itemVersion": "1.0.0",
+	"keyTypeMap": {
+		"hello": "Authentication",
+		"world": "Hunt"
+	},
+	"locked": false,
+	"logicalVersion": 4,
+	"mapping": null,
+	"name": "world_physhing",
+	"nameRaw": "world_physhing",
+	"packID": "Varonis",
+	"packPropagationLabels": [
+		"all"
+	],
+	"propagationLabels": [
+		"all"
+	],
+	"sourceClassifierId": "",
+	"system": true,
+	"toServerVersion": "",
+	"transformer": {
+		"complex": {
+			"accessor": "",
+			"filters": [],
+			"root": "inc_type",
+			"transformers": []
+		},
+		"simple": ""
+	},
+	"type": "classification",
+	"unclassifiedCases": null,
+	"version": -1
+}

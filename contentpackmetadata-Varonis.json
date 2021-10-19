@@ -1,0 +1,99 @@
+{
+	"author": "Houssem ADOUNI (OCD)",
+	"authorImage": "",
+	"beta": false,
+	"categories": [
+		"Analytics \u0026 Siem"
+	],
+	"certification": "",
+	"contentItemTypes": [
+		"integration",
+		"classifier"
+	],
+	"contentItems": {
+		"automation": [],
+		"classifier": [
+			{
+				"description": "",
+				"name": "world_physhing"
+			}
+		],
+		"dashboard": [],
+		"incidentfield": [],
+		"incidenttype": [],
+		"indicatorfield": [],
+		"integration": [
+			{
+				"category": "Analytics \u0026 SIEM",
+				"commands": [
+					{
+						"description": "",
+						"name": "go"
+					}
+				],
+				"description": "The Varonis integration",
+				"name": "VARONIS"
+			},
+			{
+				"category": "Analytics \u0026 SIEM",
+				"commands": [
+					{
+						"description": "",
+						"name": "go"
+					}
+				],
+				"description": "The Varonis integration",
+				"name": "VARONIS"
+			}
+		],
+		"layoutscontainer": [],
+		"playbook": [],
+		"report": [],
+		"reputation": [],
+		"widget": []
+	},
+	"created": "2021-10-18T15:02:17Z",
+	"currentVersion": "1.0.0",
+	"dependencies": {},
+	"deprecated": false,
+	"description": "XSOAR's content pack for Varonis",
+	"downloads": 0,
+	"eulaLink": "https://github.com/demisto/content/blob/master/LICENSE",
+	"fromServerVersion": "0.0.0",
+	"general": [
+		"generalFieldFree",
+		"generalFieldSupportIncluded"
+	],
+	"id": "Varonis",
+	"installMessage": "",
+	"integrations": null,
+	"itemVersion": "1.0.0",
+	"keywords": [],
+	"legacy": true,
+	"name": "Varonis",
+	"packID": "Varonis",
+	"premium": false,
+	"previewOnly": false,
+	"price": 0,
+	"propagationLabels": [
+		"all"
+	],
+	"rawKeywords": null,
+	"rawTags": null,
+	"rawUseCases": null,
+	"readme": "XSOAR's content pack for Varonis",
+	"searchRank": 0,
+	"serverMaxVersion": "",
+	"serverMinVersion": "0.0.0",
+	"support": "developer",
+	"supportDetails": {
+		"email": "",
+		"url": ""
+	},
+	"tags": [],
+	"toServerVersion": "",
+	"updated": "2021-10-18T15:02:17Z",
+	"useCases": [],
+	"version": -1,
+	"versionInfo": ""
+}
