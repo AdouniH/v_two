@@ -1,7 +1,7 @@
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.5.0
-    itemVersion: 2.0.2
+    itemVersion: 2.0.6
     packID: CommonPlaybooks
     packPropagationLabels:
     - all
@@ -270,6 +270,8 @@ tasks:
     isautoswitchedtoquietmode: false
     isoversize: false
     nexttasks:
+      '#default#':
+      - "5"
       "yes":
       - "7"
     note: false
@@ -289,8 +291,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 2950,
-          "y": 860
+          "x": 2840,
+          "y": 770
         }
       }
   "7":
@@ -323,8 +325,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 2960,
-          "y": 1075
+          "x": 3110,
+          "y": 1005
         }
       }
   "8":
@@ -479,7 +481,7 @@ tasks:
       {
         "position": {
           "x": 1710,
-          "y": 1000
+          "y": 980
         }
       }
   "12":
@@ -517,8 +519,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 2050,
-          "y": 1170
+          "x": 1820,
+          "y": 1210
         }
       }
   "13":
@@ -553,7 +555,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 2440,
+          "x": 1950,
           "y": 1450
         }
       }
@@ -592,8 +594,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 2960,
-          "y": 1290
+          "x": 3110,
+          "y": 1210
         }
       }
   "16":
@@ -630,8 +632,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 3920,
-          "y": 1720
+          "x": 3870,
+          "y": 1650
         }
       }
   "17":
@@ -669,8 +671,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 3420,
-          "y": 1480
+          "x": 3370,
+          "y": 1410
         }
       }
 version: -1
@@ -685,13 +687,13 @@ view: |-
       "1_3_#default#": 0.51,
       "3_4_yes": 0.46,
       "3_6_#default#": 0.5,
-      "6_7_yes": 0.57,
+      "6_7_yes": 0.46,
       "9_5_#default#": 0.26
     },
     "paper": {
       "dimensions": {
         "height": 1975,
-        "width": 3850,
+        "width": 3800,
         "x": 450,
         "y": 130
       }
