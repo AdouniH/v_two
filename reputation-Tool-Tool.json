@@ -12,7 +12,7 @@
 	"formatScript": "",
 	"fromServerVersion": "6.2.0",
 	"id": "Tool",
-	"itemVersion": "3.1.11",
+	"itemVersion": "3.1.19",
 	"layout": "STIX Tool",
 	"legacyNames": [
 		"STIX Tool"
