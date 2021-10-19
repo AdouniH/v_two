@@ -4,6 +4,9 @@ args:
   required: true
 - description: The markdown title.
   name: title
+- description: A comma-separated list of table header values. Default will include
+    all available table headers.
+  name: headers
 comment: Accepts a json object and returns a markdown.
 commonfields:
   id: JsonToTable
@@ -11,13 +14,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.5.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.9.5.21272
+dockerimage: demisto/python3:3.9.7.24076
 enabled: true
 engineinfo: {}
 name: JsonToTable
@@ -33,7 +36,8 @@ script: |2
       args = demisto.args()
       value = args.get('value')
       title = args.get('title')
-      markdown = tableToMarkdown(title, value)
+      headers = argToList(args.get('headers'))
+      markdown = tableToMarkdown(title, value, headers=headers)
 
       return_results(markdown)
 
