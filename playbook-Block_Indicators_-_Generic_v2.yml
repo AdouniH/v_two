@@ -1,7 +1,7 @@
 contentitemexportablefields:
   contentitemfields:
-    fromServerVersion: 5.0.0
-    itemVersion: 2.0.2
+    fromServerVersion: 5.5.0
+    itemVersion: 2.0.6
     packID: CommonPlaybooks
     packPropagationLabels:
     - all
@@ -14,6 +14,8 @@ description: |+
   - Block Account - Generic
   - Block IP - Generic v2
   - Block File - Generic v2
+  - Block Email - Generic
+  - Block Domain - Generic
 
 id: Block Indicators - Generic v2
 inputs:
@@ -208,6 +210,18 @@ inputs:
   playbookInputQuery: null
   required: false
   value: {}
+- description: The domain that you wish to block.
+  key: DomainToBlock
+  playbookInputQuery: null
+  required: false
+  value: {}
+- description: |-
+    The Domain List ID to add the Domain to.
+    product: Proofpoint Threat Response
+  key: DomainBlackListID
+  playbookInputQuery: null
+  required: false
+  value: {}
 name: Block Indicators - Generic v2
 outputs:
 - contextPath: CheckpointFWRule.Domain
@@ -295,7 +309,7 @@ tasks:
       {
         "position": {
           "x": 910,
-          "y": 50
+          "y": 60
         }
       }
   "2":
@@ -369,7 +383,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 50,
+          "x": -190,
           "y": 340
         }
       }
@@ -414,7 +428,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 480,
+          "x": 250,
           "y": 340
         }
       }
@@ -430,6 +444,7 @@ tasks:
       - "9"
       - "10"
       - "11"
+      - "12"
     note: false
     quietmode: 0
     separatecontext: false
@@ -518,7 +533,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 910,
+          "x": 690,
           "y": 340
         }
       }
@@ -564,7 +579,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1340,
+          "x": 1130,
           "y": 340
         }
       }
@@ -602,7 +617,58 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1780,
+          "x": 1570,
+          "y": 340
+        }
+      }
+  "12":
+    id: "12"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    loop:
+      exitCondition: ""
+      iscommand: false
+      max: 100
+      wait: 1
+    nexttasks:
+      '#none#':
+      - "2"
+    note: false
+    quietmode: 0
+    scriptarguments:
+      Domain:
+        complex:
+          root: inputs.DomainToBlock
+      DomainBlackListID:
+        complex:
+          root: inputs.DomainBlackListID
+    separatecontext: true
+    skipunavailable: true
+    task:
+      brand: ""
+      description: |-
+        This playbook blocks malicious Domains using all integrations that are enabled.
+
+        Supported integrations for this playbook:
+        * Zscaler
+        * Symantec Messaging Gateway
+        * FireEye EX
+        * Trend Micro Apex One
+        * Proofpoint Threat Response
+      id: f94181cb-559a-455c-8ced-b2a41e486b5d
+      iscommand: false
+      name: Block Domain - Generic
+      playbookId: Block Domain - Generic
+      type: playbook
+      version: -1
+    taskid: f94181cb-559a-455c-8ced-b2a41e486b5d
+    timertriggers: []
+    type: playbook
+    view: |-
+      {
+        "position": {
+          "x": 2010,
           "y": 340
         }
       }
@@ -612,10 +678,10 @@ view: |-
     "linkLabelsPosition": {},
     "paper": {
       "dimensions": {
-        "height": 530,
-        "width": 2110,
-        "x": 50,
-        "y": 50
+        "height": 520,
+        "width": 2580,
+        "x": -190,
+        "y": 60
       }
     }
   }
