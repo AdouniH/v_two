@@ -18,7 +18,7 @@
 	"hidden": false,
 	"id": "incident_phishingsclscore",
 	"isReadOnly": false,
-	"itemVersion": "2.4.1",
+	"itemVersion": "2.4.4",
 	"locked": false,
 	"mergeStrategy": "",
 	"name": "Phishing SCL Score",
