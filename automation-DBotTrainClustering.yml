@@ -103,7 +103,7 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 6.2.0
-    itemVersion: 1.13.25
+    itemVersion: 1.13.39
     packID: Base
     packPropagationLabels:
     - all
