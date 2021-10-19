@@ -5,7 +5,7 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
@@ -14,7 +14,7 @@ contentitemexportablefields:
 dependson:
   must:
   - cb-process
-dockerimage: demisto/python:2.7.18.20958
+dockerimage: demisto/python:2.7.18.24066
 engineinfo: {}
 name: BinarySearchPy
 pswd: ""
