@@ -1,7 +1,7 @@
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 2.0.2
+    itemVersion: 2.0.6
     packID: CommonPlaybooks
     packPropagationLabels:
     - all
@@ -95,7 +95,7 @@ tasks:
       {
         "position": {
           "x": 265,
-          "y": -20
+          "y": -10
         }
       }
   "1":
@@ -138,7 +138,7 @@ tasks:
       {
         "position": {
           "x": 265,
-          "y": 115
+          "y": 150
         }
       }
   "2":
@@ -204,7 +204,7 @@ tasks:
       {
         "position": {
           "x": 510,
-          "y": 1730
+          "y": 2080
         }
       }
   "4":
@@ -341,6 +341,14 @@ tasks:
                     right:
                       value:
                         simple: text/rtf
+                - - left:
+                      iscontext: true
+                      value:
+                        simple: File.Info
+                    operator: isNotEqualString
+                    right:
+                      value:
+                        simple: message/rfc822
                 root: File
                 transformers:
                 - operator: uniq
@@ -487,6 +495,14 @@ tasks:
               right:
                 value:
                   simple: text/rtf
+          - - left:
+                iscontext: true
+                value:
+                  simple: File.Info
+              operator: isNotEqualString
+              right:
+                value:
+                  simple: message/rfc822
           root: File
           transformers:
           - operator: uniq
@@ -581,7 +597,7 @@ tasks:
     isoversize: false
     nexttasks:
       '#none#':
-      - "13"
+      - "18"
     note: false
     quietmode: 0
     reputationcalc: 2
@@ -828,7 +844,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": -350,
+          "x": -320,
           "y": 950
         }
       }
@@ -1050,8 +1066,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1180,
-          "y": 1360
+          "x": 1240,
+          "y": 1740
         }
       }
   "13":
@@ -1101,8 +1117,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1060,
-          "y": 1170
+          "x": 930,
+          "y": 1560
         }
       }
   "14":
@@ -1178,8 +1194,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1300,
-          "y": 1540
+          "x": 1480,
+          "y": 1910
         }
       }
   "15":
@@ -1328,7 +1344,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 1540,
+          "x": 1480,
           "y": 700
         }
       }
@@ -1454,20 +1470,143 @@ tasks:
         - XLS
         - XLSX
         - XML
-      id: 787894ac-9cb7-4897-8de5-7ea136e9bebd
+      id: 430b4252-4478-4150-8641-2444119a6005
       iscommand: false
-      name: Convert document to PDF
+      name: Convert a document to PDF
       script: ConvertFile
       type: regular
       version: -1
-    taskid: 787894ac-9cb7-4897-8de5-7ea136e9bebd
+    taskid: 430b4252-4478-4150-8641-2444119a6005
     timertriggers: []
     type: regular
     view: |-
       {
         "position": {
-          "x": 1540,
-          "y": 970
+          "x": 1480,
+          "y": 1000
+        }
+      }
+  "17":
+    id: "17"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#none#':
+      - "13"
+    note: false
+    quietmode: 0
+    scriptarguments:
+      EntryID:
+        complex:
+          accessor: EntryID
+          filters:
+          - - ignorecase: true
+              left:
+                iscontext: true
+                value:
+                  simple: File.Type
+              operator: isEqualString
+              right:
+                value:
+                  simple: application/pdf
+            - ignorecase: true
+              left:
+                iscontext: true
+                value:
+                  simple: File.Info
+              operator: containsString
+              right:
+                value:
+                  simple: application/pdf
+          root: File
+          transformers:
+          - operator: uniq
+      file_name:
+        simple: PDF_preview
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      description: Get a preview (image) of the PDF files.
+      id: 68c81da0-f91d-4ea4-8616-82a0e333eb6f
+      iscommand: true
+      name: Preview PDF files
+      script: '|||rasterize-pdf'
+      tags:
+      - PDF_Images
+      type: regular
+      version: -1
+    taskid: 68c81da0-f91d-4ea4-8616-82a0e333eb6f
+    timertriggers: []
+    type: regular
+    view: |-
+      {
+        "position": {
+          "x": 1240,
+          "y": 1380
+        }
+      }
+  "18":
+    conditions:
+    - condition:
+      - - ignorecase: true
+          left:
+            iscontext: true
+            value:
+              complex:
+                filters:
+                - - left:
+                      iscontext: true
+                      value:
+                        simple: modules.brand
+                    operator: isEqualString
+                    right:
+                      value:
+                        simple: Rasterize
+                - - ignorecase: true
+                    left:
+                      iscontext: true
+                      value:
+                        simple: modules.state
+                    operator: isEqualString
+                    right:
+                      value:
+                        simple: active
+                root: modules
+                transformers:
+                - operator: uniq
+          operator: isExists
+      label: "yes"
+    id: "18"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#default#':
+      - "13"
+      "yes":
+      - "17"
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      description: Check if Rasterize integration is enabled
+      id: d3466327-cfe5-4364-8b19-187f67320432
+      iscommand: false
+      name: Is Rasterize enabled?
+      type: condition
+      version: -1
+    taskid: d3466327-cfe5-4364-8b19-187f67320432
+    timertriggers: []
+    type: condition
+    view: |-
+      {
+        "position": {
+          "x": 930,
+          "y": 1200
         }
       }
 version: -1
@@ -1475,24 +1614,27 @@ view: |-
   {
     "linkLabelsPosition": {
       "12_14_yes": 0.55,
-      "12_3_#default#": 0.34,
+      "12_3_#default#": 0.14,
       "13_12_yes": 0.55,
       "13_3_#default#": 0.19,
+      "15_10_#default#": 0.1,
       "15_16_yes": 0.38,
+      "18_13_#default#": 0.41,
+      "18_17_yes": 0.31,
       "1_10_#default#": 0.15,
-      "5_10_#default#": 0.36,
+      "5_10_#default#": 0.19,
       "5_6_yes": 0.36,
       "7_10_#default#": 0.1,
       "7_8_yes": 0.38,
-      "9_10_#default#": 0.21,
+      "9_10_#default#": 0.11,
       "9_11_yes": 0.35
     },
     "paper": {
       "dimensions": {
-        "height": 1815,
-        "width": 2270,
-        "x": -350,
-        "y": -20
+        "height": 2155,
+        "width": 2180,
+        "x": -320,
+        "y": -10
       }
     }
   }
