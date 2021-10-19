@@ -287,7 +287,7 @@
 	"formatScript": "",
 	"fromServerVersion": "5.5.0",
 	"id": "hostRep",
-	"itemVersion": "3.1.11",
+	"itemVersion": "3.1.19",
 	"layout": "hostRep",
 	"legacyNames": null,
 	"locked": false,
