@@ -20,14 +20,14 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.5.0
-    itemVersion: 1.13.25
+    itemVersion: 1.13.39
     packID: Base
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
 deprecated: true
-dockerimage: demisto/sane-doc-reports:1.0.0.20692
+dockerimage: demisto/sane-doc-reports:1.0.0.24118
 enabled: true
 engineinfo: {}
 name: SaneDocReports
