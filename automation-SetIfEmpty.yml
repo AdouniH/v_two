@@ -19,13 +19,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python:2.7.18.20958
+dockerimage: demisto/python3:3.9.7.24076
 engineinfo: {}
 name: SetIfEmpty
 pswd: ""
@@ -57,7 +57,7 @@ script: |2
       if hasattr(value, '__iter__') and len(value) == 1 and not isinstance(value, dict):
           value = value[0]
 
-      value_is_string_null = isinstance(value, basestring) and value.lower() in ["none", "null", ""]  # type: ignore
+      value_is_string_null = isinstance(value, str) and value.lower() in ["none", "null", ""]  # type: ignore
       return value is None or (hasattr(value, '__iter__') and len(value) == 0) or value_is_string_null
 
 
@@ -68,7 +68,7 @@ script: |2
   if __name__ in ('builtins', '__builtin__'):
       main(demisto.args())
 scripttarget: 0
-subtype: python2
+subtype: python3
 system: true
 tags:
 - transformer
