@@ -165,13 +165,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 2.4.1
+    itemVersion: 2.4.4
     packID: Phishing
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python:2.7.18.20958
+dockerimage: demisto/python:2.7.18.24066
 enabled: true
 engineinfo: {}
 name: CheckEmailAuthenticity
