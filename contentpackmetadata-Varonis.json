@@ -52,7 +52,7 @@
 		"reputation": [],
 		"widget": []
 	},
-	"created": "2021-10-18T15:02:17Z",
+	"created": "2021-10-18T17:02:17+02:00",
 	"currentVersion": "1.0.0",
 	"dependencies": {},
 	"deprecated": false,
@@ -92,7 +92,7 @@
 	},
 	"tags": [],
 	"toServerVersion": "",
-	"updated": "2021-10-18T15:02:17Z",
+	"updated": "0001-01-01T00:00:00Z",
 	"useCases": [],
 	"version": -1,
 	"versionInfo": ""
