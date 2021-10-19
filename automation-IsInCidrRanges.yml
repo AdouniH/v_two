@@ -14,13 +14,13 @@ commonfields:
 contentitemexportablefields:
   contentitemfields:
     fromServerVersion: 5.0.0
-    itemVersion: 1.4.27
+    itemVersion: 1.4.49
     packID: CommonScripts
     packPropagationLabels:
     - all
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/netutils:1.0.0.23344
+dockerimage: demisto/netutils:1.0.0.24101
 enabled: true
 engineinfo: {}
 name: IsInCidrRanges
